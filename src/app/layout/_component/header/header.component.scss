@@ -1,0 +1,12 @@
+:host {
+  header {
+    width: 100%;
+    background: green;
+    color: #fff;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+}

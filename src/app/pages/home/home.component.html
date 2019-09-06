@@ -1,0 +1,23 @@
+<div style="display: flex">
+  <div style="width: 50%; border-right: 1px solid #000000;">
+    Home Page - <button (click)="reload()" style="background: red; color: #ffffff; width: 100px; border: none; padding: 1rem;">CALL API</button>
+
+    <br/>
+    <ul *ngIf="(tee_time | async) && !(tee_time | async).loading && (tee_time | async).items.length">
+      <li *ngFor="let i of (tee_time | async).items">
+        <a href="javascript:void(0)" (click)="getDetail(i.id)">      {{i.title}} - {{i.id}}
+
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <div  *ngIf="(tee_time | async)" style="padding:0 1rem">
+    <div *ngIf="(tee_time | async).item" style="background: black; color: #ffffff; width: 100%; height: 100%; padding:0 1rem; flex: 1">
+      {{(tee_time | async).item.title}}
+      <br/>
+      {{(tee_time | async).item.content}}
+    </div>
+  </div>
+
+</div>
